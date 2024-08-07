@@ -1,2 +1,10 @@
-rootProject.name = 'Lesson_11'
-
+rootProject.name = '43QA'
+include 'lesson13'
+include 'lesson14'
+include 'lesson15'
+include 'lesson16'
+include 'lesson17'
+include 'lesson18'
+include 'lesson19'
+include 'lesson20'
+include 'lesson21'

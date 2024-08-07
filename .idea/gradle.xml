@@ -12,6 +12,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/lesson13" />
+            <option value="$PROJECT_DIR$/lesson14" />
+            <option value="$PROJECT_DIR$/lesson15" />
+            <option value="$PROJECT_DIR$/lesson16" />
+            <option value="$PROJECT_DIR$/lesson17" />
+            <option value="$PROJECT_DIR$/lesson18" />
+            <option value="$PROJECT_DIR$/lesson19" />
+            <option value="$PROJECT_DIR$/lesson20" />
+            <option value="$PROJECT_DIR$/lesson21" />
           </set>
         </option>
       </GradleProjectSettings>

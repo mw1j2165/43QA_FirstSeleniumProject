@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.23.0'
+    implementation group: 'org.testng', name: 'testng', version: '7.10.2'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.6'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.9.2'
+}
+
+test {
+    useTestNG()
+}
+
+//lesson 17
+tasks.register('qa', Test) {
+    useTestNG()
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+}
+
+//lesson 18
+//tasks.register('add_contact', Test) {
+//    useTestNG() {
+//        suites 'src/test/resources/testng.xml'
+//    }
+//    if (project.hasProperty('browser')) {
+//        systemProperty 'browser', "${browser}"
+//    }
+//}
+
+def registerTask(String taskName, String suitePath) {
+    tasks.register(taskName, Test) {
+        useTestNG() {
+            suites suitePath
+        }
+        if (project.hasProperty('browser')) {
+            systemProperty 'browser', "${browser}"
+        }
+    }
+}
+
+registerTask('add_contact', 'src/test/resources/testng.xml')
+registerTask('smoky', 'src/test/resources/smoke.xml')
+registerTask('regression', 'src/test/resources/regression.xml')
